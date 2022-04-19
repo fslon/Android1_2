@@ -13,9 +13,12 @@
     <string name="textPoint">.</string>
     <string name="textPlus">+</string>
     <string name="textMultiply">*</string>
-    <string name="textDivide">/</string>
+    <string name="textDivide">÷</string>
     <string name="textEqual">=</string>
     <string name="textMinus">-</string>
+    <string name="textPlusMinus">+/-</string>
+    <string name="textReset">С</string>
+
 
 
 </resources>
