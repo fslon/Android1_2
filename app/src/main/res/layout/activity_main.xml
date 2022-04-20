@@ -20,7 +20,9 @@
         android:gravity="bottom|center_horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+
+        >
 
         <TableRow>
 
@@ -30,6 +32,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_column="0"
+                android:layout_marginEnd="@dimen/_10dp"
                 android:backgroundTint="@color/buttonReset"
                 android:text="@string/textReset"
                 android:textColor="@color/black"
@@ -38,16 +41,15 @@
                 />
 
             <Button
-                android:id="@+id/buttonDivide"
+                android:id="@+id/buttonDeleteFromLeft"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_column="3"
-                android:backgroundTint="@color/grey"
-                android:text="@string/textDivide"
-                android:textColor="@color/black"
-                android:textSize="@dimen/buttonNumbers"
+                android:background="?android:attr/selectableItemBackground"
+                android:text="@string/deleteFromLeft"
+                android:textColor="@color/greenForButtonsOfAction"
+                android:textSize="@dimen/buttonDeleteFromLeft" />
 
-                />
 
         </TableRow>
 
@@ -57,6 +59,7 @@
                 android:id="@+id/buttonOne"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10dp"
                 android:backgroundTint="@color/grey"
                 android:text="@string/text1"
                 android:textColor="@color/black"
@@ -66,6 +69,7 @@
                 android:id="@+id/buttonTwo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10dp"
                 android:backgroundTint="@color/grey"
                 android:text="@string/text2"
                 android:textColor="@color/black"
@@ -75,6 +79,7 @@
                 android:id="@+id/buttonThree"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10dp"
                 android:backgroundTint="@color/grey"
                 android:text="@string/text3"
                 android:textColor="@color/black"
@@ -86,7 +91,7 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/grey"
                 android:text="@string/textPlus"
-                android:textColor="@color/black"
+                android:textColor="@color/greenForButtonsOfAction"
                 android:textSize="@dimen/buttonNumbers" />
         </TableRow>
 
@@ -97,6 +102,7 @@
                 android:id="@+id/buttonFour"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10dp"
                 android:backgroundTint="@color/grey"
                 android:text="@string/text4"
                 android:textColor="@color/black"
@@ -107,18 +113,18 @@
                 android:id="@+id/buttonFive"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10dp"
                 android:backgroundTint="@color/grey"
                 android:text="@string/text5"
                 android:textColor="@color/black"
-                android:textSize="@dimen/buttonNumbers"
-
-                />
+                android:textSize="@dimen/buttonNumbers" />
 
             <Button
 
                 android:id="@+id/buttonSix"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10dp"
                 android:backgroundTint="@color/grey"
                 android:text="@string/text6"
                 android:textColor="@color/black"
@@ -130,7 +136,7 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/grey"
                 android:text="@string/textMinus"
-                android:textColor="@color/black"
+                android:textColor="@color/greenForButtonsOfAction"
                 android:textSize="@dimen/buttonNumbers" />
         </TableRow>
 
@@ -140,6 +146,7 @@
                 android:id="@+id/buttonSeven"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10dp"
                 android:backgroundTint="@color/grey"
                 android:text="@string/text7"
                 android:textColor="@color/black"
@@ -149,6 +156,7 @@
                 android:id="@+id/buttonEight"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10dp"
                 android:backgroundTint="@color/grey"
                 android:text="@string/text8"
                 android:textColor="@color/black"
@@ -158,6 +166,7 @@
                 android:id="@+id/buttonNine"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10dp"
                 android:backgroundTint="@color/grey"
                 android:text="@string/text9"
                 android:textColor="@color/black"
@@ -169,37 +178,29 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/grey"
                 android:text="@string/textMultiply"
-                android:textColor="@color/black"
+                android:textColor="@color/greenForButtonsOfAction"
                 android:textSize="@dimen/buttonNumbers" />
         </TableRow>
 
         <TableRow>
 
             <Button
-                android:id="@+id/buttonPlusMinus"
+                android:id="@+id/buttonPoint"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10dp"
                 android:backgroundTint="@color/grey"
-                android:text="@string/textPlusMinus"
+                android:text="@string/textPoint"
                 android:textColor="@color/black"
                 android:textSize="@dimen/buttonNumbers" />
-
 
             <Button
                 android:id="@+id/buttonZero"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10dp"
                 android:backgroundTint="@color/grey"
                 android:text="@string/text0"
-                android:textColor="@color/black"
-                android:textSize="@dimen/buttonNumbers" />
-
-            <Button
-                android:id="@+id/buttonPoint"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/grey"
-                android:text="@string/textPoint"
                 android:textColor="@color/black"
                 android:textSize="@dimen/buttonNumbers" />
 
@@ -207,11 +208,22 @@
                 android:id="@+id/buttonEqual"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
-                android:backgroundTint="@color/greenForEqualButton"
+                android:layout_marginEnd="@dimen/_10dp"
+                android:backgroundTint="@color/greenForButtonsOfAction"
                 android:text="@string/textEqual"
                 android:textColor="@color/black"
                 android:textSize="@dimen/buttonNumbers" />
+
+            <Button
+                android:id="@+id/buttonDivide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/grey"
+                android:text="@string/textDivide"
+                android:textColor="@color/greenForButtonsOfAction"
+                android:textSize="@dimen/buttonNumbers"
+
+                />
         </TableRow>
 
 

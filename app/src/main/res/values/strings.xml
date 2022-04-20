@@ -18,6 +18,9 @@
     <string name="textMinus">-</string>
     <string name="textPlusMinus">+/-</string>
     <string name="textReset">С</string>
+    <string name="deleteFromLeft">&#9003;</string>
+
+
 
 
 
