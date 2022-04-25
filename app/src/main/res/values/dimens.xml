@@ -3,8 +3,10 @@
     <dimen name="buttonNumbers">37sp</dimen>
     <dimen name="_10dp">7dp</dimen>
     <dimen name="buttonDeleteFromLeft">25sp</dimen>
-    <dimen name="_30dpForButtons">90dp</dimen>
-    <dimen name="heightOfDisplay">200dp</dimen>
+    <dimen name="sizeForButtons">90dp</dimen>
+    <dimen name="heightOfDisplay">130dp</dimen>
     <dimen name="marginBottomForDisplay">20dp</dimen>
+    <dimen name="marginBottomForTableLayout">20dp</dimen>
+
 
 </resources>

@@ -24,7 +24,8 @@
         android:gravity="bottom|center_horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+       >
 
         <TableRow>
 
@@ -45,8 +46,8 @@
             <Button
 
                 android:id="@+id/buttonReset"
-                android:layout_width="@dimen/_30dpForButtons"
-                android:layout_height="@dimen/_30dpForButtons"
+                android:layout_width="@dimen/sizeForButtons"
+                android:layout_height="@dimen/sizeForButtons"
                 android:layout_column="0"
                 android:layout_marginEnd="@dimen/_10dp"
                 android:backgroundTint="@color/buttonReset"
@@ -58,8 +59,8 @@
 
             <Button
                 android:id="@+id/buttonDeleteFromLeft"
-                android:layout_width="@dimen/_30dpForButtons"
-                android:layout_height="@dimen/_30dpForButtons"
+                android:layout_width="@dimen/sizeForButtons"
+                android:layout_height="@dimen/sizeForButtons"
                 android:layout_column="3"
                 android:background="?android:attr/selectableItemBackground"
                 android:text="@string/deleteFromLeft"
@@ -73,8 +74,8 @@
 
             <Button
                 android:id="@+id/buttonOne"
-                android:layout_width="@dimen/_30dpForButtons"
-                android:layout_height="@dimen/_30dpForButtons"
+                android:layout_width="@dimen/sizeForButtons"
+                android:layout_height="@dimen/sizeForButtons"
                 android:layout_marginEnd="@dimen/_10dp"
                 android:backgroundTint="@color/grey"
                 android:text="@string/text1"
@@ -83,8 +84,8 @@
 
             <Button
                 android:id="@+id/buttonTwo"
-                android:layout_width="@dimen/_30dpForButtons"
-                android:layout_height="@dimen/_30dpForButtons"
+                android:layout_width="@dimen/sizeForButtons"
+                android:layout_height="@dimen/sizeForButtons"
                 android:layout_marginEnd="@dimen/_10dp"
                 android:backgroundTint="@color/grey"
                 android:text="@string/text2"
@@ -93,8 +94,8 @@
 
             <Button
                 android:id="@+id/buttonThree"
-                android:layout_width="@dimen/_30dpForButtons"
-                android:layout_height="@dimen/_30dpForButtons"
+                android:layout_width="@dimen/sizeForButtons"
+                android:layout_height="@dimen/sizeForButtons"
                 android:layout_marginEnd="@dimen/_10dp"
                 android:backgroundTint="@color/grey"
                 android:text="@string/text3"
@@ -103,8 +104,8 @@
 
             <Button
                 android:id="@+id/buttonPlus"
-                android:layout_width="@dimen/_30dpForButtons"
-                android:layout_height="@dimen/_30dpForButtons"
+                android:layout_width="@dimen/sizeForButtons"
+                android:layout_height="@dimen/sizeForButtons"
                 android:backgroundTint="@color/grey"
                 android:text="@string/textPlus"
                 android:textColor="@color/greenForButtonsOfAction"
@@ -116,8 +117,8 @@
             <Button
 
                 android:id="@+id/buttonFour"
-                android:layout_width="@dimen/_30dpForButtons"
-                android:layout_height="@dimen/_30dpForButtons"
+                android:layout_width="@dimen/sizeForButtons"
+                android:layout_height="@dimen/sizeForButtons"
                 android:layout_marginEnd="@dimen/_10dp"
                 android:backgroundTint="@color/grey"
                 android:text="@string/text4"
@@ -127,8 +128,8 @@
             <Button
 
                 android:id="@+id/buttonFive"
-                android:layout_width="@dimen/_30dpForButtons"
-                android:layout_height="@dimen/_30dpForButtons"
+                android:layout_width="@dimen/sizeForButtons"
+                android:layout_height="@dimen/sizeForButtons"
                 android:layout_marginEnd="@dimen/_10dp"
                 android:backgroundTint="@color/grey"
                 android:text="@string/text5"
@@ -138,8 +139,8 @@
             <Button
 
                 android:id="@+id/buttonSix"
-                android:layout_width="@dimen/_30dpForButtons"
-                android:layout_height="@dimen/_30dpForButtons"
+                android:layout_width="@dimen/sizeForButtons"
+                android:layout_height="@dimen/sizeForButtons"
                 android:layout_marginEnd="@dimen/_10dp"
                 android:backgroundTint="@color/grey"
                 android:text="@string/text6"
@@ -148,8 +149,8 @@
 
             <Button
                 android:id="@+id/buttonMinus"
-                android:layout_width="@dimen/_30dpForButtons"
-                android:layout_height="@dimen/_30dpForButtons"
+                android:layout_width="@dimen/sizeForButtons"
+                android:layout_height="@dimen/sizeForButtons"
                 android:backgroundTint="@color/grey"
                 android:text="@string/textMinus"
                 android:textColor="@color/greenForButtonsOfAction"
@@ -160,8 +161,8 @@
 
             <Button
                 android:id="@+id/buttonSeven"
-                android:layout_width="@dimen/_30dpForButtons"
-                android:layout_height="@dimen/_30dpForButtons"
+                android:layout_width="@dimen/sizeForButtons"
+                android:layout_height="@dimen/sizeForButtons"
                 android:layout_marginEnd="@dimen/_10dp"
                 android:backgroundTint="@color/grey"
                 android:text="@string/text7"
@@ -170,8 +171,8 @@
 
             <Button
                 android:id="@+id/buttonEight"
-                android:layout_width="@dimen/_30dpForButtons"
-                android:layout_height="@dimen/_30dpForButtons"
+                android:layout_width="@dimen/sizeForButtons"
+                android:layout_height="@dimen/sizeForButtons"
                 android:layout_marginEnd="@dimen/_10dp"
                 android:backgroundTint="@color/grey"
                 android:text="@string/text8"
@@ -180,8 +181,8 @@
 
             <Button
                 android:id="@+id/buttonNine"
-                android:layout_width="@dimen/_30dpForButtons"
-                android:layout_height="@dimen/_30dpForButtons"
+                android:layout_width="@dimen/sizeForButtons"
+                android:layout_height="@dimen/sizeForButtons"
                 android:layout_marginEnd="@dimen/_10dp"
                 android:backgroundTint="@color/grey"
                 android:text="@string/text9"
@@ -190,8 +191,8 @@
 
             <Button
                 android:id="@+id/buttonMultiply"
-                android:layout_width="@dimen/_30dpForButtons"
-                android:layout_height="@dimen/_30dpForButtons"
+                android:layout_width="@dimen/sizeForButtons"
+                android:layout_height="@dimen/sizeForButtons"
                 android:backgroundTint="@color/grey"
                 android:text="@string/textMultiply"
                 android:textColor="@color/greenForButtonsOfAction"
@@ -202,8 +203,8 @@
 
             <Button
                 android:id="@+id/buttonPoint"
-                android:layout_width="@dimen/_30dpForButtons"
-                android:layout_height="@dimen/_30dpForButtons"
+                android:layout_width="@dimen/sizeForButtons"
+                android:layout_height="@dimen/sizeForButtons"
                 android:layout_marginEnd="@dimen/_10dp"
                 android:backgroundTint="@color/grey"
                 android:text="@string/textPoint"
@@ -212,8 +213,8 @@
 
             <Button
                 android:id="@+id/buttonZero"
-                android:layout_width="@dimen/_30dpForButtons"
-                android:layout_height="@dimen/_30dpForButtons"
+                android:layout_width="@dimen/sizeForButtons"
+                android:layout_height="@dimen/sizeForButtons"
                 android:layout_marginEnd="@dimen/_10dp"
                 android:backgroundTint="@color/grey"
                 android:text="@string/text0"
@@ -222,8 +223,8 @@
 
             <Button
                 android:id="@+id/buttonEqual"
-                android:layout_width="@dimen/_30dpForButtons"
-                android:layout_height="@dimen/_30dpForButtons"
+                android:layout_width="@dimen/sizeForButtons"
+                android:layout_height="@dimen/sizeForButtons"
                 android:layout_marginEnd="@dimen/_10dp"
                 android:backgroundTint="@color/greenForButtonsOfAction"
                 android:text="@string/textEqual"
@@ -232,8 +233,8 @@
 
             <Button
                 android:id="@+id/buttonDivide"
-                android:layout_width="@dimen/_30dpForButtons"
-                android:layout_height="@dimen/_30dpForButtons"
+                android:layout_width="@dimen/sizeForButtons"
+                android:layout_height="@dimen/sizeForButtons"
                 android:backgroundTint="@color/grey"
                 android:text="@string/textDivide"
                 android:textColor="@color/greenForButtonsOfAction"
