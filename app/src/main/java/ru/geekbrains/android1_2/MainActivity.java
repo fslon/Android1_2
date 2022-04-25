@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void initViews() {
-        display = (TextView) findViewById(R.id.display);
+        display = findViewById(R.id.display);
 
         button1 = findViewById(R.id.buttonOne);
         button1.setOnClickListener(this);
@@ -90,65 +90,70 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         switch (view.getId()) {
             case (R.id.buttonOne):
-                display.setText("1");
+                display.append(button1.getText());
                 break;
 
             case (R.id.buttonTwo):
-
+                display.append(button2.getText());
                 break;
 
             case (R.id.buttonThree):
-
+                display.append(button3.getText());
                 break;
             case (R.id.buttonFour):
-
+                display.append(button4.getText());
                 break;
             case (R.id.buttonFive):
-
+                display.append(button5.getText());
                 break;
             case (R.id.buttonSix):
-
+                display.append(button6.getText());
                 break;
             case (R.id.buttonSeven):
-
+                display.append(button7.getText());
                 break;
             case (R.id.buttonEight):
-
+                display.append(button8.getText());
                 break;
             case (R.id.buttonNine):
-
+                display.append(button9.getText());
                 break;
             case (R.id.buttonZero):
-
+                display.append(button0.getText());
                 break;
             case (R.id.buttonReset):
-
+                display.setText("");
                 break;
             case (R.id.buttonPoint):
-
+                display.append(buttonPoint.getText());
                 break;
             case (R.id.buttonEqual):
-
+                display.append(buttonEqual.getText());
                 break;
             case (R.id.buttonDivide):
-
+                display.append(buttonDivide.getText());
                 break;
             case (R.id.buttonDeleteFromLeft):
 
+
+                if(display.getText().length()!=0){
+
+                String NumberEntered = display.getText().toString();
+                NumberEntered = NumberEntered.substring(0, NumberEntered.length() - 1);
+                display.setText(NumberEntered);
+                }
                 break;
             case (R.id.buttonPlus):
-
+                display.append(buttonPlus.getText());
                 break;
             case (R.id.buttonMinus):
-
+                display.append(buttonMinus.getText());
                 break;
             case (R.id.buttonMultiply):
-
+                display.append(buttonMultiply.getText());
                 break;
 
-
         }
-
-
     }
+
 }
