@@ -11,4 +11,6 @@
     <color name="greenForEqualButton">#74BC00</color>
     <color name="buttonReset">#FB7777</color>
     <color name="greenForButtonsOfAction">#3FA44E</color>
+    <color name="colorForDisplay">#e5d9cc</color>
+
 </resources>

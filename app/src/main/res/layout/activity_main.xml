@@ -35,7 +35,7 @@
             android:layout_width="wrap_content"
             android:layout_height="@dimen/heightOfDisplay"
             android:layout_marginBottom="@dimen/marginBottomForDisplay"
-            android:background="@color/grey"
+            android:background="@color/colorForDisplay"
 
             android:id="@+id/display"
             android:textColor="@color/black"
