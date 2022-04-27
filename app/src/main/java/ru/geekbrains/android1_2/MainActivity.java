@@ -1,6 +1,7 @@
 package ru.geekbrains.android1_2;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -13,9 +14,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     // при нажатии оператора parseInt() в переменную
     // мб параллельно append в textField
 
+    Counter counter;
+
     String actualValue; // текущее значение (при нажатии цифры записывается сюда)
 
     TextView display; // поле с отображением значений и операций //todo мб равно аппендить снизу + менее яркий текст (либо стирать полностью / показывать снизу все время ответ)
+
+    // все записываается в массив, потом по нему пройтись, выцепить операторы, (мб запомнить соседние элементы),
+    // потом запустить в мат. порядке при нажатии кнопки равно
+
 
     Button button1;
     Button button2;
@@ -41,7 +48,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Log.d("***", "222222222222222222");
         initViews();
+
+//        counter = new Counter(getApplicationContext());
+
+        counter = new Counter(this);
+
+        //counter.convertStringToDouble(); //todo убрать
     }
 
     public void initViews() {
@@ -91,38 +105,54 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (view.getId()) {
             case (R.id.buttonOne):
                 display.append(button1.getText());
+                counter.appendToNumber("1");
+
                 break;
 
             case (R.id.buttonTwo):
                 display.append(button2.getText());
+                counter.appendToNumber("2");
+
                 break;
 
             case (R.id.buttonThree):
                 display.append(button3.getText());
+                counter.appendToNumber("3");
+
                 break;
             case (R.id.buttonFour):
                 display.append(button4.getText());
+                counter.appendToNumber("4");
                 break;
             case (R.id.buttonFive):
                 display.append(button5.getText());
+                counter.appendToNumber("5");
                 break;
             case (R.id.buttonSix):
                 display.append(button6.getText());
+                counter.appendToNumber("6");
                 break;
             case (R.id.buttonSeven):
                 display.append(button7.getText());
+                counter.appendToNumber("7");
                 break;
             case (R.id.buttonEight):
                 display.append(button8.getText());
+                counter.appendToNumber("8");
                 break;
             case (R.id.buttonNine):
                 display.append(button9.getText());
+                counter.appendToNumber("9");
                 break;
             case (R.id.buttonZero):
                 display.append(button0.getText());
+                counter.appendToNumber("0");
                 break;
             case (R.id.buttonReset):
                 display.setText("");
+                counter.number = "";
+                counter.currentCounter = 0;
+                counter.list.clear();
                 break;
             case (R.id.buttonPoint):
                 display.append(buttonPoint.getText());
@@ -132,28 +162,64 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case (R.id.buttonDivide):
                 display.append(buttonDivide.getText());
+                counter.convertStringToDouble();
+                counter.addOperator("÷");
                 break;
-            case (R.id.buttonDeleteFromLeft):
+            case (R.id.buttonDeleteFromLeft): //todo не везде сделано удаление
+
+                    display.setText(deleteLastSymbolOfString(display.getText().toString(), 1));
+
+                if (counter.number.length() != 0)
+                    counter.number = counter.number.substring(0, counter.number.length() - 1);
+
+                if (counter.list.toArray().length != 0) {
+                    Log.d("/////////", "1111");
+                    Log.d("***----", counter.list.toString());
+                    if (counter.list.get(counter.list.toArray().length - 1).getClass() == Double.class) {
+                        Log.d("/////////", "2222");
+
+                        counter.list.set(counter.list.toArray().length - 1, Double.parseDouble( deleteLastSymbolOfString( counter.list.get(counter.list.toArray().length - 1).toString(), 3)));
+                        Log.d("***", counter.list.toString());
 
 
-                if(display.getText().length()!=0){
 
-                String NumberEntered = display.getText().toString();
-                NumberEntered = NumberEntered.substring(0, NumberEntered.length() - 1);
-                display.setText(NumberEntered);
+                    } else if (counter.list.get(counter.list.toArray().length - 1).getClass() == String.class) {
+                        counter.list.remove(counter.list.toArray().length-1);
+                        counter.list.remove(counter.list.toArray().length-2);
+                    }
                 }
+
                 break;
+
             case (R.id.buttonPlus):
                 display.append(buttonPlus.getText());
+//                display.append("--- " + counter.number + " ---"); // todo убрать
+                counter.convertStringToDouble();
+                counter.addOperator("+");
+
+                counter.currentCounter=0;
+                counter.addNumber();
                 break;
             case (R.id.buttonMinus):
                 display.append(buttonMinus.getText());
+                counter.convertStringToDouble();
+                counter.addOperator("-");
                 break;
             case (R.id.buttonMultiply):
                 display.append(buttonMultiply.getText());
+                counter.convertStringToDouble();
+                counter.addOperator("*");
                 break;
 
         }
+    }
+
+    private String deleteLastSymbolOfString(String stringForDelete, int number) { // удаляет последний символ в строке
+        Log.e("111", stringForDelete);
+        if (stringForDelete.length() != 0)
+            stringForDelete = stringForDelete.substring(0, stringForDelete.length() - number);
+        Log.e("222", stringForDelete);
+        return stringForDelete;
     }
 
 }
