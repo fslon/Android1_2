@@ -1,7 +1,6 @@
 package ru.geekbrains.android1_2;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -138,7 +137,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 counter.appendNumberToList(Double.parseDouble(button9.getText().toString()));
                 break;
 
-            case (R.id.buttonZero):
+            case (R.id.buttonZero): //todo сделать ноль
                 display.append(button0.getText());
                 counter.appendNumberToList(Double.parseDouble(button0.getText().toString()));
                 break;
@@ -148,36 +147,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 counter.list.clear();
                 break;
 
-            case (R.id.buttonPoint): // todo сделать точку (прописать невозможность стоять в пустой строке, после оператора и равно)
-                display.append(buttonPoint.getText());
+            case (R.id.buttonPoint): // todo сделать так, чтобы было невозможно поставить 2+ точки подряд
                 counter.appendOperatorToList(buttonPoint.getText().toString());
-                break;
-
-            case (R.id.buttonEqual): // todo сделать равно (невозможность ставить после оператора (подумать насчет точки), в пустой строке, подумать насчет ситуации без вычислений(пользователь ввел только число и нажал равно))
-                display.append(buttonEqual.getText());
-                counter.appendOperatorToList(buttonEqual.getText().toString());
                 break;
 
             case (R.id.buttonDivide):
                 counter.appendOperatorToList(buttonDivide.getText().toString());
                 break;
+
             case (R.id.buttonDeleteFromLeft):
                 backspaceDisplay();
-
                 if (counter.list.toArray().length != 0)
                     counter.list.remove(counter.list.toArray().length - 1);
                 break;
 
             case (R.id.buttonPlus):
-
-                Log.d("+++", counter.list.toString());
-
                 counter.appendOperatorToList(buttonPlus.getText().toString());
-
-                Log.d("+++", counter.list.toString());
-
                 break;
-
 
             case (R.id.buttonMinus):
                 counter.appendOperatorToList(buttonMinus.getText().toString());
@@ -187,9 +173,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 counter.appendOperatorToList(buttonMultiply.getText().toString());
                 break;
 
+            case (R.id.buttonEqual):
+                display.append(buttonEqual.getText());
+                counter.appendOperatorToList(buttonEqual.getText().toString());
+
+                if (counter.list.toArray().length > 2) {
+                    counter.startCalculations();
+                }
+
+                break;
+
         }
     }
-
 
     public void backspaceDisplay() { // удаляет последний символ на дисплее
         String displayInString = display.getText().toString();
