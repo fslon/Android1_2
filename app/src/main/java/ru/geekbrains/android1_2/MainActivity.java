@@ -9,11 +9,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
+
     Counter counter;
 
-    TextView display; // поле с отображением значений и операций // todo мб равно аппендить снизу + менее яркий текст (либо стирать полностью / показывать снизу все время ответ)
+    TextView display; // поле с отображением значений и операций
 
     // все записываается в arrayList, при нажатии оператора соседние числа складываются в одну ячейку, при нажатии 'равно' в мат. порядке запускаются все действия (сначала искать * и /, потом + и -)
+
+    //todo переделать double на BigDecimal, разобраться с 0 (удаляет нули в значениях по типу 15.00000002)
 
 
     Button button1;
@@ -137,7 +140,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 counter.appendNumberToList(Double.parseDouble(button9.getText().toString()));
                 break;
 
-            case (R.id.buttonZero): //todo сделать ноль
+            case (R.id.buttonZero):
                 display.append(button0.getText());
                 counter.appendNumberToList(Double.parseDouble(button0.getText().toString()));
                 break;
@@ -174,13 +177,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case (R.id.buttonEqual):
-                display.append(buttonEqual.getText());
                 counter.appendOperatorToList(buttonEqual.getText().toString());
-
-                if (counter.list.toArray().length > 2) {
-                    counter.startCalculations();
-                }
-
+                if (counter.list.toArray().length > 2) counter.startCalculations();
                 break;
 
         }

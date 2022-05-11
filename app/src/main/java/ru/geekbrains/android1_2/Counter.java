@@ -7,6 +7,8 @@ public class Counter {
 
     MainActivity main;
 
+    int checkForEnd = 0; // если стоит 1, то сбросить все (1 ставится после нажатия "равно")
+
     ArrayList<Object> list = new ArrayList<>(); // массив для примеров (что нужно вычислить)
 
     public Counter(MainActivity main) {
@@ -14,13 +16,23 @@ public class Counter {
     }
 
     public void appendNumberToList(double numberToAdd) {
+        if (checkForEnd == 1) { // проверка на "равно" чуть раньше, т.е. после нажатия "равно" нужно выполнить действия внутри
+            main.display.setText(String.valueOf(numberToAdd).substring(0, String.valueOf(numberToAdd).length() - 2));
+            list.clear();
+            checkForEnd = 0;
+        }
         list.add(numberToAdd);
     }
 
     public void appendOperatorToList(String operatorToAdd) {
 
-        if (list.toArray().length > 0) {
+        if (checkForEnd == 1) { // проверка на "равно" чуть раньше, т.е. после нажатия "равно" нужно выполнить действия внутри
+            main.display.setText("");
+            list.clear();
+            checkForEnd = 0;
+        }
 
+        if (list.toArray().length > 0) {
             if (list.get(list.toArray().length - 1).getClass() == operatorToAdd.getClass()) { // проверка на повторение операторов
                 list.remove(list.toArray().length - 1);
                 main.backspaceDisplay();
@@ -30,14 +42,18 @@ public class Counter {
         }
     }
 
-
     public void startCalculations() { // при нажатии "равно" срабатывает этот метод
 
         transformArrayForCalculations();
         performCalculations();
 
-        main.display.append("=" + list.toString()); //todo доделать "="
-
+        if (list.get(0).getClass() == Double.class) {
+            if (list.get(0).toString().subSequence(list.get(0).toString().length() - 2, list.get(0).toString().length()).equals(".0")) { // округление до целого числа, если это необходимо
+                list.set(0, list.get(0).toString().substring(0, list.get(0).toString().length() - 2));
+            }
+            main.display.append(list.get(0).toString());
+        }
+        checkForEnd = 1;
     }
 
 
@@ -83,10 +99,12 @@ public class Counter {
                     list.set(i, ((double) list.get(i - 1)) * ((double) list.get(i + 1)));
                     list.remove(i + 1);
                     list.remove(i - 1);
+                    i--;
                 } else if (list.get(i).toString().equals(main.buttonDivide.getText().toString())) {
                     list.set(i, ((double) list.get(i - 1)) / ((double) list.get(i + 1)));
                     list.remove(i + 1);
                     list.remove(i - 1);
+                    i--;
                 }
 
             }
@@ -98,10 +116,12 @@ public class Counter {
                     list.set(i, ((double) list.get(i - 1)) - ((double) list.get(i + 1)));
                     list.remove(i + 1);
                     list.remove(i - 1);
+                    i--;
                 } else if (list.get(i).toString().equals(main.buttonPlus.getText().toString())) {
                     list.set(i, ((double) list.get(i - 1)) + ((double) list.get(i + 1)));
                     list.remove(i + 1);
                     list.remove(i - 1);
+                    i--;
                 }
             }
         }
