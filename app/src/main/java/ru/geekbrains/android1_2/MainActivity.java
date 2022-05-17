@@ -44,6 +44,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+       // AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+
         initViews();
 
         counter = new Counter(this);
@@ -52,7 +54,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public void initViews() {
         display = findViewById(R.id.display);
-
         button1 = findViewById(R.id.buttonOne);
         button1.setOnClickListener(this);
         button2 = findViewById(R.id.buttonTwo);

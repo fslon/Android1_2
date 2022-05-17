@@ -7,10 +7,10 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="grey">#cdcdcd</color>
-    <color name="greenForEqualButton">#74BC00</color>
+    <color name="colorForNumbersBackground">#cdcdcd</color>
+    <color name="colorForNumbers">#FF000000</color>
     <color name="buttonReset">#FB7777</color>
     <color name="greenForButtonsOfAction">#3FA44E</color>
-    <color name="colorForDisplay">#e5d9cc</color>
+    <color name="colorForDisplayBackground">#e5d9cc</color>
 
 </resources>

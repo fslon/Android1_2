@@ -4,7 +4,7 @@
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorOnPrimary">#3CFF00</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
         <item name="colorSecondaryVariant">@color/teal_700</item>
@@ -13,4 +13,20 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <!--    для чисел + "."   -->
+    <style name="StyleForNumbers" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:backgroundTint">@color/colorForNumbersBackground</item>
+        <item name="android:textColor">@color/purple_200</item>
+        <item name="colorOnPrimary">@color/colorForNumbers</item>
+        <item name="android:textSize">@dimen/buttonNumbers</item>
+    </style>
+
+    <!--    для операторов   -->
+    <style name="StyleForOperators" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:backgroundTint">@color/colorForNumbersBackground</item>
+        <item name="colorOnPrimary">@color/greenForButtonsOfAction</item>
+        <item name="android:textSize">@dimen/buttonNumbers</item>
+    </style>
+
 </resources>
