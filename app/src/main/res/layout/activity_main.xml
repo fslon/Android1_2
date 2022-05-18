@@ -40,7 +40,7 @@
 
         <TableRow>
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonReset"
                 android:layout_width="@dimen/sizeForButtons"
                 android:layout_height="@dimen/sizeForButtons"
@@ -51,7 +51,7 @@
                 android:textColor="@color/black"
                 android:textSize="@dimen/buttonNumbers" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonDeleteFromLeft"
                 android:layout_width="@dimen/sizeForButtons"
                 android:layout_height="@dimen/sizeForButtons"
@@ -66,7 +66,7 @@
 
         <TableRow>
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonOne"
                 android:layout_width="@dimen/sizeForButtons"
                 android:layout_height="@dimen/sizeForButtons"
@@ -74,7 +74,7 @@
                 android:text="@string/text1"
                 android:theme="@style/StyleForNumbers" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonTwo"
                 android:layout_width="@dimen/sizeForButtons"
                 android:layout_height="@dimen/sizeForButtons"
@@ -82,7 +82,7 @@
                 android:text="@string/text2"
                 android:theme="@style/StyleForNumbers" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonThree"
                 android:layout_width="@dimen/sizeForButtons"
                 android:layout_height="@dimen/sizeForButtons"
@@ -90,7 +90,7 @@
                 android:text="@string/text3"
                 android:theme="@style/StyleForNumbers" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonPlus"
                 android:layout_width="@dimen/sizeForButtons"
                 android:layout_height="@dimen/sizeForButtons"
@@ -100,7 +100,7 @@
 
         <TableRow>
 
-            <Button
+            <com.google.android.material.button.MaterialButton
 
                 android:id="@+id/buttonFour"
                 android:layout_width="@dimen/sizeForButtons"
@@ -109,7 +109,7 @@
                 android:text="@string/text4"
                 android:theme="@style/StyleForNumbers" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
 
                 android:id="@+id/buttonFive"
                 android:layout_width="@dimen/sizeForButtons"
@@ -118,7 +118,7 @@
                 android:text="@string/text5"
                 android:theme="@style/StyleForNumbers" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
 
                 android:id="@+id/buttonSix"
                 android:layout_width="@dimen/sizeForButtons"
@@ -127,7 +127,7 @@
                 android:text="@string/text6"
                 android:theme="@style/StyleForNumbers" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonMinus"
                 android:layout_width="@dimen/sizeForButtons"
                 android:layout_height="@dimen/sizeForButtons"
@@ -137,7 +137,7 @@
 
         <TableRow>
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonSeven"
                 android:layout_width="@dimen/sizeForButtons"
                 android:layout_height="@dimen/sizeForButtons"
@@ -145,7 +145,7 @@
                 android:text="@string/text7"
                 android:theme="@style/StyleForNumbers" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonEight"
                 android:layout_width="@dimen/sizeForButtons"
                 android:layout_height="@dimen/sizeForButtons"
@@ -153,7 +153,7 @@
                 android:text="@string/text8"
                 android:theme="@style/StyleForNumbers" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonNine"
                 android:layout_width="@dimen/sizeForButtons"
                 android:layout_height="@dimen/sizeForButtons"
@@ -161,7 +161,7 @@
                 android:text="@string/text9"
                 android:theme="@style/StyleForNumbers" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonMultiply"
                 android:layout_width="@dimen/sizeForButtons"
                 android:layout_height="@dimen/sizeForButtons"
@@ -171,7 +171,7 @@
 
         <TableRow>
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonPoint"
                 android:layout_width="@dimen/sizeForButtons"
                 android:layout_height="@dimen/sizeForButtons"
@@ -179,7 +179,7 @@
                 android:text="@string/textPoint"
                 android:theme="@style/StyleForNumbers" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonZero"
                 android:layout_width="@dimen/sizeForButtons"
                 android:layout_height="@dimen/sizeForButtons"
@@ -187,7 +187,7 @@
                 android:text="@string/text0"
                 android:theme="@style/StyleForNumbers" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonEqual"
                 android:layout_width="@dimen/sizeForButtons"
                 android:layout_height="@dimen/sizeForButtons"
@@ -197,7 +197,7 @@
                 android:textColor="@color/black"
                 android:textSize="@dimen/buttonNumbers" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonDivide"
                 android:layout_width="@dimen/sizeForButtons"
                 android:layout_height="@dimen/sizeForButtons"

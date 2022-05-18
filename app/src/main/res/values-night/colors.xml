@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorForNumbersBackground">#101421</color>
+    <color name="buttonReset">#86050C</color>
+    <color name="colorForDisplayBackground">#000512</color>
+    <color name="greenForButtonsOfAction">#006D02</color>
+    <color name="colorForNumbers">#BCBCBC</color>
+
+</resources>
