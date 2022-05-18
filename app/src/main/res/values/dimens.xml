@@ -7,6 +7,6 @@
     <dimen name="heightOfDisplay">130dp</dimen>
     <dimen name="marginBottomForDisplay">20dp</dimen>
     <dimen name="marginBottomForTableLayout">20dp</dimen>
-
+    <dimen name="sizeForRadioGroupOfThemes">20sp</dimen>
 
 </resources>

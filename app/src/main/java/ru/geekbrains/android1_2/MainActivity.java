@@ -1,23 +1,24 @@
 package ru.geekbrains.android1_2;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-
+    //todo переделать double на BigDecimal, разобраться с 0 (удаляет нули в значениях по типу 15.00000002)
 
     Counter counter;
 
     TextView display; // поле с отображением значений и операций
 
-    // все записываается в arrayList, при нажатии оператора соседние числа складываются в одну ячейку, при нажатии 'равно' в мат. порядке запускаются все действия (сначала искать * и /, потом + и -)
-
-    //todo переделать double на BigDecimal, разобраться с 0 (удаляет нули в значениях по типу 15.00000002)
-
+    RadioButton radioButtonLightTheme;
+    RadioButton radioButtonNightTheme;
 
     Button button1;
     Button button2;
@@ -38,13 +39,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button buttonMinus;
     Button buttonMultiply;
 
+    public static final int codeLightTheme = 0;
+    public static final int codeNightTheme = 1;
+    private static final String nameSharedPreference = "THEMES"; // название файла в preferences куда все записывается
+    private static final String themeInSharedPreference = "CURRENT_THEME"; // ключ по которому можно получить доступ к полю с темой
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-       // AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        firstLaunch();
 
         initViews();
 
@@ -52,7 +57,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
+    private void firstLaunch() {
+        if (getAppTheme(codeLightTheme) == 0)
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        else AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+    }
+
+
+    private int getAppTheme(int themeCode) {
+        SharedPreferences sharedPref = getSharedPreferences(nameSharedPreference, MODE_PRIVATE); // Работаем через специальный класс сохранения и чтения настроек
+        return sharedPref.getInt(themeInSharedPreference, themeCode); // Прочитать тему, если настройка не найдена - взять по умолчанию
+    }
+
+    private void editAppThemeInPreferences(int themeCode) {
+        SharedPreferences sharedPref = getSharedPreferences(nameSharedPreference, MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit(); // Настройки сохраняются посредством специального класса editor.
+        editor.putInt(themeInSharedPreference, themeCode);
+        editor.apply();
+    }
+
+
     public void initViews() {
+        radioButtonLightTheme = findViewById(R.id.radioButtonLightTheme);
+        radioButtonLightTheme.setOnClickListener(this);
+        radioButtonNightTheme = findViewById(R.id.radioButtonNightTheme);
+        radioButtonNightTheme.setOnClickListener(this);
         display = findViewById(R.id.display);
         button1 = findViewById(R.id.buttonOne);
         button1.setOnClickListener(this);
@@ -96,6 +125,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
 
         switch (view.getId()) {
+
+            case (R.id.radioButtonLightTheme):
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                editAppThemeInPreferences(codeLightTheme);
+                recreate();
+                break;
+
+            case (R.id.radioButtonNightTheme):
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                editAppThemeInPreferences(codeNightTheme);
+                recreate();
+                break;
+
             case (R.id.buttonOne):
                 display.append(button1.getText());
                 counter.appendNumberToList(Double.parseDouble(button1.getText().toString()));

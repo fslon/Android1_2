@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 public class Counter {
 
+// все записываается в arrayList, при нажатии оператора соседние числа складываются в одну ячейку, при нажатии 'равно' в мат. порядке запускаются все действия (сначала искать * и /, потом + и -)
+
 
     MainActivity main;
 
@@ -90,7 +92,6 @@ public class Counter {
         }
     }
 
-
     public void performCalculations() { // непосредственно выполнение расчетов
 
         for (int i = 0; i < list.toArray().length; i++) { // цикл для умножить или делить
@@ -126,9 +127,7 @@ public class Counter {
             }
         }
 
-
     }
-
 
 }
 

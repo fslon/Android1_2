@@ -15,6 +15,29 @@
         android:scaleType="centerCrop"
         app:srcCompat="@drawable/background_main" />
 
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/tableLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/radioButtonLightTheme"
+            style="@style/StyleForRadioGroupOfThemes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/radioLightMode" />
+
+        <RadioButton
+            android:id="@+id/radioButtonNightTheme"
+            style="@style/StyleForRadioGroupOfThemes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/radioNightMode" />
+    </RadioGroup>
+
 
     <TableLayout
         android:id="@+id/tableLayout"
@@ -27,16 +50,16 @@
 
         <TableRow>
 
+            <TextView
+                android:id="@+id/display"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/heightOfDisplay"
+                android:layout_marginBottom="@dimen/marginBottomForDisplay"
+                android:layout_span="4"
+                android:background="@color/colorForDisplayBackground"
+                android:textColor="@color/colorForNumbers"
+                android:textSize="30sp" />
         </TableRow>
-
-        <TextView
-            android:id="@+id/display"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/heightOfDisplay"
-            android:layout_marginBottom="@dimen/marginBottomForDisplay"
-            android:background="@color/colorForDisplayBackground"
-            android:textColor="@color/colorForNumbers"
-            android:textSize="30sp" />
 
         <TableRow>
 

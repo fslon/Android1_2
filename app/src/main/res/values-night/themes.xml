@@ -29,4 +29,11 @@
         <item name="android:textSize">@dimen/buttonNumbers</item>
     </style>
 
+    <!--    для смены тем   -->
+    <style name="StyleForRadioGroupOfThemes" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorOnPrimary">@color/colorForNumbers</item>
+        <item name="android:textSize">@dimen/sizeForRadioGroupOfThemes</item>
+    </style>
+
+
 </resources>
