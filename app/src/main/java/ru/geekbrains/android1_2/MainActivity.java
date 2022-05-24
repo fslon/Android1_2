@@ -1,24 +1,23 @@
 package ru.geekbrains.android1_2;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.RadioButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener, InterfaceWithValues {
     //todo переделать double на BigDecimal, разобраться с 0 (удаляет нули в значениях по типу 15.00000002)
 
     Counter counter;
 
     TextView display; // поле с отображением значений и операций
-
-    RadioButton radioButtonLightTheme;
-    RadioButton radioButtonNightTheme;
+    ImageView settingsButton;
 
     Button button1;
     Button button2;
@@ -39,10 +38,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button buttonMinus;
     Button buttonMultiply;
 
-    public static final int codeLightTheme = 0;
-    public static final int codeNightTheme = 1;
-    private static final String nameSharedPreference = "THEMES"; // название файла в preferences куда все записывается
-    private static final String themeInSharedPreference = "CURRENT_THEME"; // ключ по которому можно получить доступ к полю с темой
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,25 +59,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         else AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
     }
 
-
-    private int getAppTheme(int themeCode) {
-        SharedPreferences sharedPref = getSharedPreferences(nameSharedPreference, MODE_PRIVATE); // Работаем через специальный класс сохранения и чтения настроек
-        return sharedPref.getInt(themeInSharedPreference, themeCode); // Прочитать тему, если настройка не найдена - взять по умолчанию
-    }
-
-    private void editAppThemeInPreferences(int themeCode) {
-        SharedPreferences sharedPref = getSharedPreferences(nameSharedPreference, MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPref.edit(); // Настройки сохраняются посредством специального класса editor.
-        editor.putInt(themeInSharedPreference, themeCode);
-        editor.apply();
-    }
-
-
     public void initViews() {
-        radioButtonLightTheme = findViewById(R.id.radioButtonLightTheme);
-        radioButtonLightTheme.setOnClickListener(this);
-        radioButtonNightTheme = findViewById(R.id.radioButtonNightTheme);
-        radioButtonNightTheme.setOnClickListener(this);
+        settingsButton = findViewById(R.id.runSettingsActivity);
+        settingsButton.setOnClickListener(this);
         display = findViewById(R.id.display);
         button1 = findViewById(R.id.buttonOne);
         button1.setOnClickListener(this);
@@ -121,21 +101,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonMultiply.setOnClickListener(this);
     }
 
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK) {
+            if (getAppTheme(codeLightTheme) == 0) { // todo в отдельный метод
+                editAppThemeInPreferences(codeNightTheme);
+            } else editAppThemeInPreferences(codeLightTheme);
+            firstLaunch();
+            recreate();
+        }
+    }
+
     @Override
     public void onClick(View view) {
 
         switch (view.getId()) {
 
-            case (R.id.radioButtonLightTheme):
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-                editAppThemeInPreferences(codeLightTheme);
-                recreate();
-                break;
-
-            case (R.id.radioButtonNightTheme):
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                editAppThemeInPreferences(codeNightTheme);
-                recreate();
+            case (R.id.runSettingsActivity):
+                Intent runSettings = new Intent(this, SettingsActivity.class);
+                startActivityForResult(runSettings, REQUEST_CODE_SETTING_ACTIVITY);
                 break;
 
             case (R.id.buttonOne):
@@ -231,5 +215,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String displayInString = display.getText().toString();
         if (displayInString.length() != 0)
             display.setText(displayInString.substring(0, displayInString.length() - 1));
+    }
+
+    public int getAppTheme(int themeCode) {
+        SharedPreferences sharedPref = getSharedPreferences(nameSharedPreference, MODE_PRIVATE); // Работаем через специальный класс сохранения и чтения настроек
+        return sharedPref.getInt(themeInSharedPreference, themeCode); // Прочитать тему, если настройка не найдена - взять по умолчанию
+    }
+
+    private void editAppThemeInPreferences(int themeCode) {
+        SharedPreferences sharedPref = getSharedPreferences(nameSharedPreference, MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit(); // Настройки сохраняются посредством специального класса editor.
+        editor.putInt(themeInSharedPreference, themeCode);
+        editor.apply();
     }
 }

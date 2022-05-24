@@ -15,28 +15,16 @@
         android:scaleType="centerCrop"
         app:srcCompat="@drawable/background_main" />
 
-    <RadioGroup
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/runSettingsActivity"
+        android:layout_width="@dimen/sizeOfSettingsBtn"
+        android:layout_height="@dimen/sizeOfSettingsBtn"
+        android:layout_marginBottom="@dimen/marginBottomSettingsButton"
         app:layout_constraintBottom_toTopOf="@id/tableLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintEnd_toEndOf="@id/tableLayout"
+        app:srcCompat="@drawable/ic_baseline_settings_24"
 
-        <RadioButton
-            android:id="@+id/radioButtonLightTheme"
-            style="@style/StyleForRadioGroupOfThemes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/radioLightMode" />
-
-        <RadioButton
-            android:id="@+id/radioButtonNightTheme"
-            style="@style/StyleForRadioGroupOfThemes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/radioNightMode" />
-    </RadioGroup>
+        />
 
 
     <TableLayout

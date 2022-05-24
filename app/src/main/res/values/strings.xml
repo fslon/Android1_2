@@ -21,6 +21,8 @@
     <string name="deleteFromLeft">&#9003;</string>
     <string name="radioLightMode">Light mode</string>
     <string name="radioNightMode">Night mode</string>
+    <string name="changeTheme">Сменить тему</string>
+    <string name="settingsText">Настройки</string>
 
 
 </resources>
